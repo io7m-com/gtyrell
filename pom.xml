@@ -14,7 +14,7 @@
 
   <groupId>com.io7m.gtyrell</groupId>
   <artifactId>com.io7m.gtyrell</artifactId>
-  <version>3.3.0-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
 
   <packaging>pom</packaging>
   <name>com.io7m.gtyrell</name>
@@ -31,8 +31,11 @@
   </modules>
 
   <properties>
+    <!-- Configuration -->
     <io7m.api.previousVersion>3.2.0</io7m.api.previousVersion>
     <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
+
+    <!-- Third-party dependencies. -->
     <junit.version>5.10.2</junit.version>
   </properties>
 
@@ -44,9 +47,9 @@
   </licenses>
 
   <scm>
-    <url>https://github.com/io7m/gtyrell</url>
-    <connection>scm:git:https://github.com/io7m/gtyrell</connection>
-    <developerConnection>scm:git:https://github.com/io7m/gtyrell</developerConnection>
+    <url>https://www.github.com/io7m-com/gtyrell</url>
+    <connection>scm:git:https://www.github.com/io7m-com/gtyrell</connection>
+    <developerConnection>scm:git:https://www.github.com/io7m-com/gtyrell</developerConnection>
   </scm>
 
   <developers>
@@ -59,7 +62,7 @@
   </developers>
 
   <issueManagement>
-    <url>https://github.com/io7m/gtyrell/issues</url>
+    <url>https://www.github.com/io7m-com/gtyrell/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -77,7 +80,7 @@
 
   <ciManagement>
     <system>GitHub Actions</system>
-    <url>https://github.com/gtyrell/actions</url>
+    <url>https://www.github.com/io7m-com/gtyrell/actions</url>
   </ciManagement>
 
   <prerequisites>

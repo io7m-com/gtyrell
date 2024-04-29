@@ -78,6 +78,6 @@
     </c:release>
   </c:releases>
   <c:ticket-systems>
-    <c:ticket-system default="false" id="com.github.io7m.gtyrell" url="http://github.com/io7m/gtyrell/issues/"/>
+    <c:ticket-system default="false" id="com.github.io7m.gtyrell" url="http://www.github.com/io7m-com/gtyrell/issues/"/>
   </c:ticket-systems>
 </c:changelog>

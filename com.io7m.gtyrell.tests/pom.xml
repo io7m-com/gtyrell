@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.io7m.gtyrell</groupId>
     <artifactId>com.io7m.gtyrell</artifactId>
-    <version>3.3.0-SNAPSHOT</version>
+    <version>4.0.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>com.io7m.gtyrell.tests</artifactId>
@@ -22,6 +22,7 @@
 
   <properties>
     <mdep.analyze.skip>true</mdep.analyze.skip>
+    <checkstyle.skip>true</checkstyle.skip>
   </properties>
 
   <dependencies>
