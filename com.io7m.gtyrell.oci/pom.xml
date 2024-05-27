@@ -22,8 +22,6 @@
 
   <properties>
     <mdep.analyze.skip>true</mdep.analyze.skip>
-    <com.io7m.oci.versionAlpine>3.17.3</com.io7m.oci.versionAlpine>
-    <com.io7m.oci.versionTemurin>17.0.7_7-jre-alpine</com.io7m.oci.versionTemurin>
   </properties>
 
   <dependencies>
