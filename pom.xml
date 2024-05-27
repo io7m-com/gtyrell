@@ -9,12 +9,12 @@
   <parent>
     <groupId>com.io7m.primogenitor</groupId>
     <artifactId>com.io7m.primogenitor.full</artifactId>
-    <version>7.5.0</version>
+    <version>8.2.0</version>
   </parent>
 
   <groupId>com.io7m.gtyrell</groupId>
   <artifactId>com.io7m.gtyrell</artifactId>
-  <version>3.2.0</version>
+  <version>4.0.0</version>
 
   <packaging>pom</packaging>
   <name>com.io7m.gtyrell</name>
@@ -31,8 +31,16 @@
   </modules>
 
   <properties>
-    <io7m.api.previousVersion>3.1.0</io7m.api.previousVersion>
-    <junit.version>5.9.3</junit.version>
+    <!-- Configuration -->
+    <io7m.api.previousVersion>3.2.0</io7m.api.previousVersion>
+    <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
+
+    <!-- Third-party dependencies. -->
+    <junit.version>5.10.2</junit.version>
+    <!-- https://hub.docker.com/_/alpine/ -->
+    <com.io7m.oci.versionAlpine>3.20.0</com.io7m.oci.versionAlpine>
+    <!-- https://hub.docker.com/_/eclipse-temurin -->
+    <com.io7m.oci.versionTemurin>21.0.3_9-jre-alpine</com.io7m.oci.versionTemurin>
   </properties>
 
   <licenses>
@@ -43,9 +51,9 @@
   </licenses>
 
   <scm>
-    <url>https://github.com/io7m/gtyrell</url>
-    <connection>scm:git:https://github.com/io7m/gtyrell</connection>
-    <developerConnection>scm:git:https://github.com/io7m/gtyrell</developerConnection>
+    <url>https://www.github.com/io7m-com/gtyrell</url>
+    <connection>scm:git:https://www.github.com/io7m-com/gtyrell</connection>
+    <developerConnection>scm:git:https://www.github.com/io7m-com/gtyrell</developerConnection>
   </scm>
 
   <developers>
@@ -58,7 +66,7 @@
   </developers>
 
   <issueManagement>
-    <url>https://github.com/io7m/gtyrell/issues</url>
+    <url>https://www.github.com/io7m-com/gtyrell/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
 
@@ -76,7 +84,7 @@
 
   <ciManagement>
     <system>GitHub Actions</system>
-    <url>https://github.com/gtyrell/actions</url>
+    <url>https://www.github.com/io7m-com/gtyrell/actions</url>
   </ciManagement>
 
   <prerequisites>
@@ -88,12 +96,12 @@
       <dependency>
         <groupId>com.io7m.junreachable</groupId>
         <artifactId>com.io7m.junreachable.core</artifactId>
-        <version>4.0.0</version>
+        <version>4.0.2</version>
       </dependency>
       <dependency>
         <groupId>com.io7m.jaffirm</groupId>
         <artifactId>com.io7m.jaffirm.core</artifactId>
-        <version>4.0.0</version>
+        <version>4.0.1</version>
       </dependency>
       <dependency>
         <groupId>com.io7m.jproperties</groupId>
@@ -103,7 +111,7 @@
       <dependency>
         <groupId>com.io7m.jlexing</groupId>
         <artifactId>com.io7m.jlexing.core</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.0</version>
       </dependency>
 
       <dependency>
@@ -125,17 +133,22 @@
       <dependency>
         <groupId>org.immutables</groupId>
         <artifactId>value</artifactId>
-        <version>2.9.3</version>
+        <version>2.10.1</version>
       </dependency>
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>2.0.7</version>
+        <version>2.0.13</version>
       </dependency>
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.4.7</version>
+        <version>1.5.6</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-core</artifactId>
+        <version>1.5.6</version>
       </dependency>
       <dependency>
         <groupId>com.beust</groupId>
@@ -145,12 +158,12 @@
       <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
-        <version>2.11.0</version>
+        <version>2.16.1</version>
       </dependency>
       <dependency>
         <groupId>org.kohsuke</groupId>
         <artifactId>github-api</artifactId>
-        <version>1.314</version>
+        <version>1.321</version>
       </dependency>
       <dependency>
         <groupId>javax.mail</groupId>
@@ -160,12 +173,12 @@
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-core</artifactId>
-        <version>2.15.0</version>
+        <version>2.17.1</version>
       </dependency>
       <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>
         <artifactId>jackson-databind</artifactId>
-        <version>2.15.0</version>
+        <version>2.17.1</version>
       </dependency>
 
       <dependency>
@@ -182,7 +195,7 @@
       <dependency>
         <groupId>com.github.marschall</groupId>
         <artifactId>memoryfilesystem</artifactId>
-        <version>2.6.0</version>
+        <version>2.8.0</version>
       </dependency>
       <dependency>
         <groupId>org.jmockit</groupId>

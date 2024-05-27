@@ -36,7 +36,7 @@ public final class GTRepositoryNames
 
   public static final Pattern PATTERN =
     Objects.requireNonNull(compile(
-      "[\\p{Alnum}_\\-][\\p{Alnum}_\\-\\.]{0,127}",
+      "\\.?[\\p{Alnum}_\\-][\\p{Alnum}_\\-\\.]{0,127}",
       UNICODE_CHARACTER_CLASS), "Pattern");
 
   private GTRepositoryNames()

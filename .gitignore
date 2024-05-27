@@ -7,3 +7,6 @@
 com.io7m.gtyrell.*/target
 pom.xml.versionsBackup
 target
+.jqwik-database
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
