@@ -36,7 +36,7 @@
     <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
 
     <!-- Third-party dependencies. -->
-    <junit.version>5.11.2</junit.version>
+    <org.junit.version>5.11.2</org.junit.version>
     <!-- https://hub.docker.com/_/alpine/ -->
     <com.io7m.oci.versionAlpine>3.20.0</com.io7m.oci.versionAlpine>
     <!-- https://hub.docker.com/_/eclipse-temurin -->
@@ -182,14 +182,11 @@
       </dependency>
 
       <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>${junit.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>${junit.version}</version>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${org.junit.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
 
       <dependency>
