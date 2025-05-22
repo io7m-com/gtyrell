@@ -38,9 +38,9 @@
     <!-- Third-party dependencies. -->
     <org.junit.version>5.12.2</org.junit.version>
     <!-- https://hub.docker.com/_/alpine/ -->
-    <com.io7m.oci.versionAlpine>3.20.0</com.io7m.oci.versionAlpine>
+    <com.io7m.oci.versionAlpine>3.21.3</com.io7m.oci.versionAlpine>
     <!-- https://hub.docker.com/_/eclipse-temurin -->
-    <com.io7m.oci.versionTemurin>21.0.3_9-jre-alpine</com.io7m.oci.versionTemurin>
+    <com.io7m.oci.versionTemurin>24.0.1_9-jre-alpine</com.io7m.oci.versionTemurin>
     <org.immutables.version>2.10.1</org.immutables.version>
   </properties>
 
