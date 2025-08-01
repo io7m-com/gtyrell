@@ -41,7 +41,7 @@
     <com.io7m.oci.versionAlpine>3.21.3</com.io7m.oci.versionAlpine>
     <!-- https://hub.docker.com/_/eclipse-temurin -->
     <com.io7m.oci.versionTemurin>24.0.1_9-jre-alpine</com.io7m.oci.versionTemurin>
-    <org.immutables.version>2.10.1</org.immutables.version>
+    <org.immutables.version>2.11.1</org.immutables.version>
   </properties>
 
   <licenses>
