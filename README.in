@@ -66,7 +66,7 @@ will almost certainly annoy the administrators of the remote repositories that
 `gtyrell` is syncing. Please set `d` to a sensible value (such as 30 minutes
 or greater).
 
-## Inclusions/Exclusion filters
+## Inclusion And Exclusion filters
 
 It's possible to explicitly include and exclude repositories from being
 cloned and/or updated. This is achieved by specifying a filter program:
