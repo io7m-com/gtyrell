@@ -126,6 +126,7 @@ public final class GTGitExecutable implements GTGitExecutableType
     final List<String> out_lines =
       Collections.synchronizedList(new ArrayList<>(16));
     final Process process = pb.start();
+    LOG.debug("execute started pid {}", process.pid());
     GTProcessUtilities.executeLogged(LOG, process, out_lines);
   }
 }

@@ -16,8 +16,12 @@ LABEL "org.opencontainers.image.revision"="${buildNumber}"
 
 RUN ["apk", "update"]
 RUN ["apk", "add", "git"]
+RUN ["apk", "add", "tini"]
 
 VOLUME "/gtyrell/etc"
 VOLUME "/data"
 
-ENTRYPOINT ["/opt/java/openjdk/bin/java", "-jar", "/gtyrell/bin/gtyrell.jar"]
+# git spawns child processes and fails to reap them. Normally PID 1 would
+# reap them, but PID 1 is the JVM and contains no such code to do that.
+# The tini package provides a tiny init that does this reaping.
+ENTRYPOINT ["/sbin/tini", "--", "/opt/java/openjdk/bin/java", "-jar", "/gtyrell/bin/gtyrell.jar"]

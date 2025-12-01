@@ -62,31 +62,16 @@ final class GTProcessUtilities
         }
       });
 
-    Thread.ofVirtual()
-      .start(() -> {
-        try (InputStream p_stdout = p.getErrorStream()) {
-          try (BufferedReader r_stdout = new BufferedReader(
-            new InputStreamReader(p_stdout, StandardCharsets.UTF_8))) {
-
-            while (true) {
-              final String out_line = r_stdout.readLine();
-              if (out_line == null) {
-                break;
-              }
-
-              out_lines.add(out_line);
-              log.debug("execute: stderr: {}", out_line);
-            }
-          }
-        } catch (final Exception e) {
-          log.error("Failed to read process streams: ", e);
-        }
-      });
-
     try {
       p.waitFor();
     } catch (final InterruptedException e) {
       log.error("interrupted whilst waiting for process: ", e);
+    }
+
+    try {
+      p.destroyForcibly();
+    } catch (final Exception e) {
+      // Ignored.
     }
 
     if (p.exitValue() > 0) {
