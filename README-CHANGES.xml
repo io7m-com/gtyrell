@@ -98,7 +98,7 @@
         </c:change>
       </c:changes>
     </c:release>
-    <c:release date="2025-05-22T19:30:34+00:00" is-open="false" ticket-system="com.github.io7m.gtyrell" version="4.0.1">
+    <c:release date="2025-05-22T00:00:00+00:00" is-open="false" ticket-system="com.github.io7m.gtyrell" version="4.0.1">
       <c:changes>
         <c:change date="2024-06-20T00:00:00+00:00" summary="Update org.kohsuke:github-api:1.321 → 1.322."/>
         <c:change date="2024-06-27T00:00:00+00:00" summary="Update junit.version:5.10.2 → 5.10.3."/>
@@ -156,6 +156,11 @@
         <c:change date="2025-05-01T00:00:00+00:00" summary="Update commons-io:commons-io:2.18.0 → 2.19.0."/>
         <c:change date="2025-05-01T00:00:00+00:00" summary="Update com.fasterxml.jackson.core:jackson-databind:2.18.2 → 2.19.0."/>
         <c:change date="2025-05-22T00:00:00+00:00" summary="Update container Alpine and JDK versions."/>
+      </c:changes>
+    </c:release>
+    <c:release date="2025-12-01T21:51:50+00:00" is-open="true" ticket-system="com.github.io7m.gtyrell" version="4.1.0">
+      <c:changes>
+        <c:change date="2025-12-01T21:51:50+00:00" summary="Use tini package in OCI images in order to ensure git processes are reaped."/>
       </c:changes>
     </c:release>
   </c:releases>
