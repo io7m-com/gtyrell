@@ -41,35 +41,59 @@ final class GTProcessUtilities
     final List<String> out_lines)
     throws IOException
   {
-    try (InputStream p_stdout = p.getInputStream()) {
-      try (BufferedReader r_stdout = new BufferedReader(
-        new InputStreamReader(p_stdout, StandardCharsets.UTF_8))) {
+    Thread.ofVirtual()
+      .start(() -> {
+        try (InputStream p_stdout = p.getInputStream()) {
+          try (BufferedReader r_stdout = new BufferedReader(
+            new InputStreamReader(p_stdout, StandardCharsets.UTF_8))) {
 
-        while (true) {
-          final String out_line = r_stdout.readLine();
-          if (out_line == null) {
-            break;
+            while (true) {
+              final String out_line = r_stdout.readLine();
+              if (out_line == null) {
+                break;
+              }
+
+              out_lines.add(out_line);
+              log.debug("execute: stdout: {}", out_line);
+            }
           }
-
-          out_lines.add(out_line);
-          log.debug("execute: {}", out_line);
+        } catch (final Exception e) {
+          log.error("Failed to read process streams: ", e);
         }
-      }
+      });
 
-      try {
-        p.waitFor();
-      } catch (final InterruptedException e) {
-        log.error(
-          "interrupted whilst waiting for process: ", e);
-      }
+    Thread.ofVirtual()
+      .start(() -> {
+        try (InputStream p_stdout = p.getErrorStream()) {
+          try (BufferedReader r_stdout = new BufferedReader(
+            new InputStreamReader(p_stdout, StandardCharsets.UTF_8))) {
 
-      if (p.exitValue() > 0) {
-        try (ByteArrayOutputStream bao = new ByteArrayOutputStream()) {
-          IOUtils.writeLines(out_lines, "\n", bao, StandardCharsets.UTF_8);
-          throw new IOException(bao.toString("UTF-8"));
+            while (true) {
+              final String out_line = r_stdout.readLine();
+              if (out_line == null) {
+                break;
+              }
+
+              out_lines.add(out_line);
+              log.debug("execute: stderr: {}", out_line);
+            }
+          }
+        } catch (final Exception e) {
+          log.error("Failed to read process streams: ", e);
         }
+      });
+
+    try {
+      p.waitFor();
+    } catch (final InterruptedException e) {
+      log.error("interrupted whilst waiting for process: ", e);
+    }
+
+    if (p.exitValue() > 0) {
+      try (ByteArrayOutputStream bao = new ByteArrayOutputStream()) {
+        IOUtils.writeLines(out_lines, "\n", bao, StandardCharsets.UTF_8);
+        throw new IOException(bao.toString("UTF-8"));
       }
     }
   }
-
 }

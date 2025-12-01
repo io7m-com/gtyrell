@@ -16,6 +16,7 @@
 
 package com.io7m.gtyrell.core;
 
+import java.util.Collections;
 import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,7 +86,8 @@ public final class GTGitExecutable implements GTGitExecutableType
     configureEnvironment(pb.environment());
     pb.redirectErrorStream(true);
 
-    final List<String> out_lines = new ArrayList<>(16);
+    final List<String> out_lines =
+      Collections.synchronizedList(new ArrayList<>(16));
     final Process process = pb.start();
     GTProcessUtilities.executeLogged(LOG, process, out_lines);
   }
@@ -121,7 +123,8 @@ public final class GTGitExecutable implements GTGitExecutableType
     configureEnvironment(pb.environment());
     pb.redirectErrorStream(true);
 
-    final List<String> out_lines = new ArrayList<>(16);
+    final List<String> out_lines =
+      Collections.synchronizedList(new ArrayList<>(16));
     final Process process = pb.start();
     GTProcessUtilities.executeLogged(LOG, process, out_lines);
   }
