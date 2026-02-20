@@ -36,7 +36,7 @@
     <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
 
     <!-- Third-party dependencies. -->
-    <org.junit.version>5.14.1</org.junit.version>
+    <org.junit.version>5.14.2</org.junit.version>
     <!-- https://hub.docker.com/_/alpine/ -->
     <com.io7m.oci.versionAlpine>3.22.2</com.io7m.oci.versionAlpine>
     <!-- https://hub.docker.com/_/eclipse-temurin -->
